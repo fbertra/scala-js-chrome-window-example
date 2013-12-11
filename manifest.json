@@ -1,0 +1,16 @@
+{
+  "name": "Hola Mundo con FFI!",
+  "description": "Mi segunda Chrome App usando Scala y un FFI.",
+  "version": "0.1",
+  "app": {
+    "background": {
+      "scripts": [
+              "target/scala-2.10/chome-window-example-extdeps.js",
+              "target/scala-2.10/chome-window-example-intdeps.js",      	      
+              "target/scala-2.10/chome-window-example.js",
+      	      "js/background.js"
+      ]
+    }
+  },
+  "icons": { "16": "calculator-16.png", "128": "calculator-128.png" }
+}
