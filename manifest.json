@@ -5,6 +5,7 @@
   "app": {
     "background": {
       "scripts": [
+      	      "js/jquery-1.10.2.min.js",
               "target/scala-2.10/chome-window-example-extdeps.js",
               "target/scala-2.10/chome-window-example-intdeps.js",      	      
               "target/scala-2.10/chome-window-example.js",

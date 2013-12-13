@@ -8,10 +8,9 @@ object Build extends sbt.Build {
     scalaJSSettings: _*
   ).settings(
     name := "chome-window-example",
-    libraryDependencies += "org.scala-lang.modules.scalajs" %% "scalajs-jquery" % "0.1-SNAPSHOT",
-    unmanagedSources in (Compile, ScalaJSKeys.packageJS) +=
-      baseDirectory.value / "js" / "index.js"
+    libraryDependencies += "org.scala-lang.modules.scalajs" %% "scalajs-jquery" % "0.1-SNAPSHOT"
   ).dependsOn(lib)
 
   lazy val lib = RootProject(file("../scala-js-chrome-extension"))
 }
+

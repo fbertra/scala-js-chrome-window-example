@@ -1,6 +1,9 @@
 package chromeapp
 
 import scala.scalajs.js
+import scala.scalajs.js.JSON
+
+import js.Dynamic.global
 
 import org.scalajs.chrome._
 import org.scalajs.chrome.Chrome._
@@ -9,26 +12,16 @@ import org.scalajs.chrome.app.window._
 
 object Main {
   def launch (data : LaunchData) : js.Undefined = {
-    /*
-    val bound = new Bounds 
+    val params = js.Object ().asInstanceOf [CreateParams]
+    params.id = "main2" 
+    params.minWidth = 1000
+    params.minHeight = 400    
+    params.bounds = js.Object ().asInstanceOf  [Bounds]
+    params.bounds.left = 10
+    params.bounds.top = 20
     
-    bound.top = 10
-    bound.left = 20
-    bound.width = 1000
-    bound.height = 400
-    */
-      
-    val params = new CreateParams ("main")
-    // params.id = 
+    global.console.log(JSON.stringify(params))
 
-    /*    
-    val params = js.Dynamic.newInstance (js.Dynamic.global.js.Object) () 
-    
-    params.updateDynamic ("id") ("main")
-    params.updateDynamic ("minWidth") (200.0)
-    params.updateDynamic ("minHeight") (100.0)
-    */
-      
     chrome.app.window.create ("index-dev.html", params)
     
     ()
